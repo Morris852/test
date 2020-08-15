@@ -1,6 +1,6 @@
 ---
 - hosts: webservers
-  become: true
+  become: ture
 
   tasks:
   - name: build docker iamge
