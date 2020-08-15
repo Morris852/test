@@ -9,10 +9,12 @@
 
   - name: remove stopped container
     command: docker rm myapp
+    ignore_errors: yes
 
   - name: remove docker image
     command: docker image rm morrisyuen/test
+    ignore_errors: yes
 
-  - create container using nginxtest
+  - name: create container using morrisyuen/test
     command: docker run -d --name myapp -p 8080:80 morrisyuen/test
 
