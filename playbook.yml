@@ -1,9 +1,18 @@
 ---
-- hosts: localhosts
+- hosts: webservers
   become: true
 
   tasks:
-  - name: build docker iamge
-    command: sudo docker build -t nginxtest .
-    args:
-      chdir: /var/lib/jenkins/workspace/Deploy_to_DockerHost_with_Ansible
+  - name: stop current running container
+    command: docker stop nginxtest
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm nginxtest
+
+  - name: remove docker image
+    command: docker image rm nginxtest
+
+  - create container using nginxtest
+    command: docker run -d --name nginxtest -p 8080:80 nginxtest
+
