@@ -16,5 +16,5 @@
     ignore_errors: yes
 
   - name: create container using morrisyuen/test
-    command: docker run -d --name myapp -p 8080:80 morrisyuen/test
+    command: docker run -d --name myapp -p 8080:80 {{imageName}}
 
