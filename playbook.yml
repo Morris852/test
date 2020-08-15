@@ -2,9 +2,6 @@
 - hosts: webservers
   become: true
 
-  vars:
-  - imageName
-
   tasks:
   - name: stop current running container
     command: docker stop myapp
