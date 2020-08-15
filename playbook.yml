@@ -5,3 +5,5 @@
   tasks:
   - name: build docker iamge
     command: docker build -t nginxtest .
+    args:
+      chdir: /var/lib/jenkins/workspace/Deploy_to_DockerHost_with_Ansible
