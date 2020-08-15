@@ -4,15 +4,15 @@
 
   tasks:
   - name: stop current running container
-    command: docker stop nginxtest
+    command: docker stop myapp
     ignore_errors: yes
 
   - name: remove stopped container
-    command: docker rm nginxtest
+    command: docker rm myapp
 
   - name: remove docker image
-    command: docker image rm nginxtest
+    command: docker image rm morrisyuen/test
 
   - create container using nginxtest
-    command: docker run -d --name nginxtest -p 8080:80 nginxtest
+    command: docker run -d --name myapp -p 8080:80 morrisyuen/test
 
