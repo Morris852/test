@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: localhosts
   become: true
 
   tasks:
