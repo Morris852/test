@@ -1,3 +1,7 @@
-[webservers]
+[staging]
 172.31.26.120 ansible_user=ec2-user
+
+[prod]
+172.31.40.97 ansible_user=ec2-user
+
 
